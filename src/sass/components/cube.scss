@@ -1,0 +1,124 @@
+
+.scene {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  perspective: 50vh;
+  perspective-origin: center center;
+}
+
+.cube {
+  $width: 25vh;
+  $height: $width;
+
+  width: $width;
+  height: $height;
+  // border: 2px dotted white;
+  transform-style: preserve-3d;
+  transition: 700ms ease-in-out;
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    // border: 2px dotted white;
+  }
+
+  &:before {
+    transform: rotateX(90deg);  
+  }
+  
+  &:after {
+    transform: rotatey(90deg);  
+  }
+
+  &__face {
+    position: absolute;
+    width: $width;
+    height: $height;
+    // border: 1px solid white;
+    // opacity: .7;
+
+     
+
+    &--back {
+      transform: translateZ(-$width / 2);
+      background: rgba(orange, 0.7);
+    }
+
+    &--front {
+      transform: translateZ($width / 2);
+      background: rgba(gold, 0.7);
+    }
+
+    &--top {
+      transform: translateY(-$width / 2) rotateX(90deg);
+      background: rgba(skyblue, 0.7);
+    }
+
+    &--bottom {
+      transform: translateY($width / 2) rotateX(90deg);
+      background: rgba(steelblue, 0.7);
+    }
+
+    &--left {
+      transform: translateX(-$width / 2) rotateY(90deg);
+      background: rgba(lightgreen, 0.7);
+    }
+
+    &--right {
+      transform: translateX($width / 2) rotateY(90deg);
+      background: rgba(yellowgreen, 0.7);
+    }
+  }
+}
+
+.media-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    pointer-events: none;
+    object-fit: contain !important;
+
+    .cube__face--front & {
+      bottom: 2%;
+      left: 2%;
+      width: 30%;
+      height: 30%;
+    }
+
+    .cube__face--back & {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg);
+      transition: opacity 500ms ease-in 500ms;
+      pointer-events: none;
+      opacity: 1;
+
+      &.hide {
+        opacity: 0;
+        transition: opacity 700ms ease-in 1500ms;
+      }
+    }
+  }
+}

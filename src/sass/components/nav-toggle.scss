@@ -1,0 +1,95 @@
+.nav-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  width: 120px;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #e70d44;
+
+  &::before {
+    content: "\0020";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    // background: #e70d44;
+    transform-origin: right top;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms;
+  }
+
+  &.open {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+.bar-wrapper {
+  position: relative;
+  width: 26px;
+  height: 18px;
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms;
+
+  .nav-toggle.open & {
+    transform: translateY(-5px);
+  }
+}
+
+.bar {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms;
+
+  &:first-child {
+    top: 0;
+    width: 22px;
+
+    .nav-toggle:hover & {
+      width: 26px;
+    }
+
+    .nav-toggle.open & {
+      top: 13px;
+      width: 26px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:nth-child(2) {
+    top: 9px;
+
+    .nav-toggle:hover & {
+      width: 14px;
+    }
+
+    .nav-toggle.open & {
+      opacity: 0;
+    }
+  }
+
+  &:last-child {
+    top: 18px;
+    width: 14px;
+
+    .nav-toggle:hover & {
+      width: 22px;
+    }
+
+    .nav-toggle.open & {
+      top: 13px;
+      width: 26px;
+      transform: rotate(-45deg);
+    }
+  }
+}
