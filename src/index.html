@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>3d Cube Card With Video</title>
+      <!-- inject:css -->
+      <!-- endinject -->
+  </head>
+
+  <body>
+      <div class="nav-toggle">
+          <div class="bar-wrapper">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>	
+          </div>
+      </div>
+
+    <div class="scene">
+        <div class="cube">
+            <div class="cube__face cube__face--back">
+                <div class="media-box">
+                    <video playsinline loop>
+                      <source src="./images/back-cube-video.mp4" type='video/mp4'>
+                    </video>
+                    <img class="media-box__overlay" src="./images/video-overlay.png" alt="front image">
+                </div>
+            </div>
+            <div class="cube__face cube__face--left"></div>
+            <div class="cube__face cube__face--right"></div>
+            <div class="cube__face cube__face--top"></div>
+            <div class="cube__face cube__face--bottom"></div>
+            <div class="cube__face cube__face--front">
+                <div class="media-box">
+                    <img src="./images/front-cube-img.jpg" alt="front image">
+                    <img class="media-box__overlay" src="./images/video-overlay.png" alt="front image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- inject:js -->
+    <!-- endinject -->
+  </body>
+</html>
