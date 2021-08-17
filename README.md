@@ -65,7 +65,7 @@ git clone https://github.com/monsara/burger-and-3d-cube.git
 - Go to the project folder
 
 ```shell
-cd generator-hub
+cd burger-and-3d-cube
 ```
 
 - Install dependencies
