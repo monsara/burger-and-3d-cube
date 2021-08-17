@@ -10,6 +10,8 @@ const cubeInit = () => {
   const hideVideoOverlay = () => videoOverlay.classList.add('hide');;
   const showUnmuteBtn = () => (unmuteBtn.style.opacity = 1);
   const hideUnmuteBtn = () => (unmuteBtn.style.opacity = 0);
+  const setUnmuteIcon = () => unmuteBtn.classList.remove('unmute-button--pressed');
+  const setMuteIcon = () => unmuteBtn.classList.add('unmute-button--pressed');
   
   cube.addEventListener('mouseenter', () => {
     if (!video) {
@@ -46,6 +48,7 @@ const cubeInit = () => {
     video.currentTime = 0;
     showVideoOverlay();
     hideUnmuteBtn();
+    setUnmuteIcon();
   });
 
   unmuteBtn.addEventListener('click', (e) => {
@@ -54,11 +57,11 @@ const cubeInit = () => {
 
     if (!isPressed) {
       video.muted = false;
-      unmuteBtn.classList.add('unmute-button--pressed');
+      setMuteIcon();
       return;
     }
     
-    unmuteBtn.classList.remove('unmute-button--pressed');
+    setUnmuteIcon();
     video.muted = true;
   });
 }
