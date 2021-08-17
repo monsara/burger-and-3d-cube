@@ -4,12 +4,13 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  perspective: 50vh;
+  perspective: 220vh;
   perspective-origin: center center;
 }
 
 .cube {
-  $width: 25vh;
+  $width: 45vh;
+  $width: 45vh;
   $height: $width;
 
   width: $width;
@@ -17,6 +18,7 @@
   // border: 2px dotted white;
   transform-style: preserve-3d;
   transition: 700ms ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: rotateY(180deg);
@@ -51,32 +53,38 @@
 
     &--back {
       transform: translateZ(-$width / 2);
-      background: rgba(orange, 0.7);
+      // background: rgba(orange, 0.7);
+      background: rgba(black, 0.5);
     }
 
     &--front {
       transform: translateZ($width / 2);
-      background: rgba(gold, 0.7);
+      // background: rgba(gold, 0.7);
+      background: rgba(black, 0.5)
     }
 
     &--top {
       transform: translateY(-$width / 2) rotateX(90deg);
-      background: rgba(skyblue, 0.7);
+      // background: rgba(skyblue, 0.7);
+      background: rgba(black, 0.5)
     }
 
     &--bottom {
       transform: translateY($width / 2) rotateX(90deg);
-      background: rgba(steelblue, 0.7);
+      // background: rgba(steelblue, 0.7);
+      background: rgba(black, 0.7)
     }
 
     &--left {
       transform: translateX(-$width / 2) rotateY(90deg);
-      background: rgba(lightgreen, 0.7);
+      // background: rgba(lightgreen, 0.7);
+      background: rgba(black, 0.5)
     }
 
     &--right {
       transform: translateX($width / 2) rotateY(90deg);
-      background: rgba(yellowgreen, 0.7);
+      // background: rgba(yellowgreen, 0.7);
+      background: rgba(black, 0.6)
     }
   }
 }
