@@ -18,16 +18,22 @@ const cubeInit = () => {
       return;
     }
 
-    video.muted = true;
-    video.play();
+    setTimeout(() => {
+      video.muted = true;
+      video.play();
 
-    const isVideoLoaded = video.readyState === 4;
+      const isVideoLoaded = video.readyState === 4;
 
-    if (isVideoLoaded) {
-      hideVideoOverlay();
-      showUnmuteBtn();
-    }
+      if (isVideoLoaded) {
+        hideVideoOverlay();
+        setTimeout(() => {
+          showUnmuteBtn();
+        }, 500);
+      }
 
+    }, 1000);
+
+    
     // const playPromise = video.play();
 
     // if (playPromise !== undefined) {

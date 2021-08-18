@@ -108,6 +108,7 @@
     position: absolute;
     pointer-events: none;
     object-fit: contain !important;
+    background: black;
 
     .cube__face--front & {
       bottom: 2%;
@@ -121,13 +122,13 @@
       top: 0;
       left: 0;
       transform: rotateY(180deg);
-      transition: opacity 500ms ease-in 500ms;
+      transition: opacity 1500ms ease-in 500ms;
       pointer-events: none;
       opacity: 1;
 
       &.hide {
         opacity: 0;
-        transition: opacity 700ms ease-in 1500ms;
+        transition: opacity 1500ms ease-in 400ms;
       }
     }
   }
