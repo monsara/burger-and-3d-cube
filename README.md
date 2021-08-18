@@ -38,6 +38,7 @@ New browsers
 
 -   Toggle hamburger
 -   Play video on back side of cube when it is hovered
+-   Mute video on click mute button
 
 ## Instruments
 
